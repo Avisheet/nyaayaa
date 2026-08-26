@@ -22,7 +22,7 @@ const IMAGES = {
 
 const DEMO_VIDEO = {
   src: "/assets/video/nyaya-demo.mp4",
-  poster: "/assets/video/nyaya-demo-poster.svg",
+  poster: "/assets/screenshots/drafts.png",
 };
 
 const SCREENSHOTS = [
@@ -230,13 +230,71 @@ buildShowcase();
 const videoWrap = document.querySelector(".video-wrap");
 if (videoWrap) {
   const videoEl = videoWrap.querySelector("video");
-  videoWrap.addEventListener("click", () => {
+  const playBtn = videoWrap.querySelector(".video-play");
+  const backBtn = videoWrap.querySelector(".video-skip--back");
+  const fwdBtn = videoWrap.querySelector(".video-skip--fwd");
+  const SKIP_SECONDS = 10;
+
+  function playVideo() {
     videoWrap.classList.add("is-playing");
+    videoWrap.classList.remove("is-paused");
+    if (playBtn) playBtn.setAttribute("aria-label", "Pause video");
     videoEl.play().catch(() => {
-      /* video source not yet supplied — poster remains visible via CSS fallback */
+      // video source not yet supplied — poster remains visible via CSS fallback
       videoWrap.classList.remove("is-playing");
     });
-  });
+  }
+
+  function pauseVideo() {
+    videoEl.pause();
+    videoWrap.classList.add("is-paused");
+    if (playBtn) playBtn.setAttribute("aria-label", "Play video");
+  }
+
+  function toggleVideo() {
+    if (!videoWrap.classList.contains("is-playing") || videoEl.paused) {
+      playVideo();
+    } else {
+      pauseVideo();
+    }
+  }
+
+  function skip(seconds) {
+    if (!videoWrap.classList.contains("is-playing")) return; // nothing to skip before playback starts
+    const duration = videoEl.duration || Infinity;
+    videoEl.currentTime = Math.min(Math.max(videoEl.currentTime + seconds, 0), duration);
+  }
+
+  // Clicking anywhere on the frame, or the dedicated button, toggles playback.
+  videoWrap.addEventListener("click", toggleVideo);
+
+  if (backBtn) {
+    backBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      skip(-SKIP_SECONDS);
+    });
+  }
+  if (fwdBtn) {
+    fwdBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      skip(SKIP_SECONDS);
+    });
+  }
+
+  // Pause automatically once the video scrolls out of view, either direction.
+  if ("IntersectionObserver" in window) {
+    const videoIO = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting && !videoEl.paused) {
+            pauseVideo();
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+    videoIO.observe(videoWrap);
+  }
 }
 
 /* ==========================================================================

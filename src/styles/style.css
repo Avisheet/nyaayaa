@@ -723,21 +723,87 @@ p { margin: 0; }
 .video-wrap.is-playing img { display: none; }
 .video-wrap.is-playing video { display: block; }
 
-.video-play {
+.video-controls {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 84px; height: 84px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  transition: top 0.35s var(--ease), left 0.35s var(--ease), right 0.35s var(--ease), bottom 0.35s var(--ease), transform 0.35s var(--ease), gap 0.35s var(--ease);
+}
+
+.video-skip {
+  position: relative;
+  width: 46px; height: 46px;
   border-radius: 50%;
+  border: none;
+  padding: 0;
   background: rgba(246,241,231,0.92);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.35s var(--ease), background 0.35s var(--ease);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), background 0.3s var(--ease);
 }
-.video-wrap:hover .video-play { transform: translate(-50%, -50%) scale(1.06); background: var(--ivory); }
-.video-wrap.is-playing .video-play { display: none; }
-.video-play svg { margin-left: 4px; }
+.video-skip span {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--ivory);
+  font-family: var(--font-body);
+}
+.video-skip:hover { background: var(--ivory); }
+
+.video-play {
+  position: relative;
+  width: 84px; height: 84px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(246,241,231,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.35s var(--ease), background 0.35s var(--ease), width 0.35s var(--ease), height 0.35s var(--ease), opacity 0.35s var(--ease);
+}
+.video-wrap:hover .video-play { transform: scale(1.06); background: var(--ivory); }
+.video-play svg { position: absolute; margin-left: 4px; }
+.video-play .icon-pause { display: none; margin-left: 0; }
+
+/* Before playback: only the big centered play button is shown. */
+.video-wrap:not(.is-playing) .video-skip { display: none; }
+
+/* Once playing: shrink into a compact row in the corner, and reveal the
+   skip buttons, instead of the control disappearing entirely. */
+.video-wrap.is-playing .video-controls {
+  top: auto; left: auto;
+  bottom: 20px; right: 20px;
+  transform: none;
+  gap: 12px;
+}
+.video-wrap.is-playing .video-skip {
+  opacity: 0.85;
+  pointer-events: auto;
+  transform: scale(1);
+}
+.video-wrap.is-playing .video-skip:hover { opacity: 1; transform: scale(1.08); }
+.video-wrap.is-playing .video-play {
+  width: 48px; height: 48px;
+  opacity: 0.85;
+}
+.video-wrap.is-playing .video-play:hover { opacity: 1; transform: scale(1.06); }
+.video-wrap.is-playing .video-play .icon-play { display: none; }
+.video-wrap.is-playing .video-play .icon-pause { display: block; }
+.video-wrap.is-playing.is-paused .video-play .icon-play { display: block; margin-left: 4px; }
+.video-wrap.is-playing.is-paused .video-play .icon-pause { display: none; }
 
 /* ------------------------------ Designed for lawyers ------------------------------ */
 
