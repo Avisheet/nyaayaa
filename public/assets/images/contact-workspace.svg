@@ -1,0 +1,27 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: warm legal workspace">
+  <defs>
+    <radialGradient id="bg6" cx="30%" cy="20%" r="90%">
+      <stop offset="0%" stop-color="#2A4C3A"/>
+      <stop offset="100%" stop-color="#122016"/>
+    </radialGradient>
+    <filter id="grain6">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg6)"/>
+  <rect width="1200" height="900" filter="url(#grain6)" opacity="0.5"/>
+
+  <g stroke="#A98B4F" stroke-width="2" fill="none" opacity="0.55">
+    <rect x="220" y="500" width="260" height="10" rx="1"/>
+    <rect x="235" y="486" width="245" height="10" rx="1"/>
+    <path d="M700 560 L860 545 L860 620 L700 632 Z"/>
+    <line x1="720" y1="575" x2="830" y2="565"/>
+    <line x1="720" y1="592" x2="820" y2="583"/>
+  </g>
+  <circle cx="960" cy="260" r="120" fill="#F5F0E6" opacity="0.05"/>
+
+  <text x="60" y="840" font-family="Georgia, serif" font-size="18" fill="#F5F0E6" opacity="0.5">Placeholder — replace with contact section photograph</text>
+  <text x="60" y="866" font-family="Georgia, serif" font-size="13" fill="#F5F0E6" opacity="0.35">/assets/images/contact-workspace.jpg</text>
+</svg>

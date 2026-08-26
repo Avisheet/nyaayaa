@@ -1,0 +1,18 @@
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: NYAYA.AI product demo video poster">
+  <defs>
+    <linearGradient id="bgv" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1F3A2E"/>
+      <stop offset="100%" stop-color="#0F1D17"/>
+    </linearGradient>
+    <filter id="grainv">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bgv)"/>
+  <rect width="1600" height="900" filter="url(#grainv)" opacity="0.5"/>
+  <line x1="0" y1="450" x2="1600" y2="450" stroke="#A98B4F" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="800" y="500" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#F5F0E6" opacity="0.75">NYAYA.AI — Product Demonstration</text>
+  <text x="800" y="540" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#F5F0E6" opacity="0.4">Video coming soon — replace /assets/video/nyaya-demo.mp4</text>
+</svg>

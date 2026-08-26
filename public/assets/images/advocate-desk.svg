@@ -1,0 +1,42 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: lawyer working at a desk with documents and a laptop">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5F0E6"/>
+      <stop offset="100%" stop-color="#E3DBC6"/>
+    </linearGradient>
+    <filter id="grain4">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.035 0"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg4)"/>
+  <rect width="1200" height="900" filter="url(#grain4)" opacity="0.6"/>
+
+  <!-- desk surface -->
+  <rect x="0" y="620" width="1200" height="280" fill="#1A1816" opacity="0.06"/>
+  <line x1="0" y1="620" x2="1200" y2="620" stroke="#1A1816" stroke-opacity="0.2" stroke-width="2"/>
+
+  <!-- laptop -->
+  <g stroke="#1F3A2E" stroke-width="3" fill="none" opacity="0.6">
+    <path d="M430 560 L430 700 L770 700 L770 560 Z"/>
+    <path d="M400 700 L800 700 L820 730 L380 730 Z"/>
+    <line x1="470" y1="590" x2="730" y2="590"/>
+    <line x1="470" y1="620" x2="700" y2="620"/>
+    <line x1="470" y1="650" x2="650" y2="650"/>
+  </g>
+
+  <!-- documents beside laptop -->
+  <g stroke="#1A1816" stroke-width="2" fill="none" opacity="0.45">
+    <rect x="860" y="660" width="200" height="8" rx="1"/>
+    <rect x="870" y="648" width="190" height="8" rx="1"/>
+    <line x1="885" y1="652" x2="1030" y2="652" stroke-width="1"/>
+  </g>
+
+  <!-- hand / pen suggestion -->
+  <path d="M250 700 C270 660 320 650 360 665" stroke="#A98B4F" stroke-width="3" fill="none" opacity="0.6"/>
+  <line x1="245" y1="705" x2="380" y2="662" stroke="#1A1816" stroke-width="2" opacity="0.4"/>
+
+  <text x="60" y="830" font-family="Georgia, serif" font-size="18" fill="#1A1816" opacity="0.4">Placeholder — replace with desk / working photograph</text>
+  <text x="60" y="856" font-family="Georgia, serif" font-size="13" fill="#1A1816" opacity="0.3">/assets/images/advocate-desk.jpg</text>
+</svg>
