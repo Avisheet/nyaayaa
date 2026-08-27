@@ -10,8 +10,8 @@ inject();
 const CONTACT = {
   whatsappPrimary: "+917518905006",   // e.g. "+919876543210"
   whatsappSecondary: "+917807425728",
-  emailPrimary: "hello@nyaya.ai",
-  emailSecondary: "demo@nyaya.ai",
+  emailPrimary: "avisheetsrivastava@gmail.com",
+  emailSecondary: "alikeakb4@gmail.com",
 };
 
 const IMAGES = {
