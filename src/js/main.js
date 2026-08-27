@@ -3,6 +3,9 @@
    Configuration objects — edit these to replace placeholders.
    ========================================================================== */
 
+import { inject } from "@vercel/analytics";
+inject();
+
 // Update these with your real numbers/emails before going live.
 const CONTACT = {
   whatsappPrimary: "+917518905006",   // e.g. "+919876543210"
