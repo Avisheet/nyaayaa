@@ -310,7 +310,7 @@ function digitsOnly(v) {
 
 function buildContactLinks() {
   const waMessage = encodeURIComponent(
-    "Hello, I came across NYAYA.AI and would like to learn more about the product and request a demonstration."
+    "Hello, I came across NYAYA.AI and would like to learn more about the product and have a discussion."
   );
   const emailSubject = encodeURIComponent("NYAYA.AI — Demo Request");
 
