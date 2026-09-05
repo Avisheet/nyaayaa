@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>NYAYA.AI — AI Case Intelligence for Indian Legal Practice</title>
 <meta name="description" content="NYAYA.AI helps legal professionals understand matters, research relevant Indian authorities, challenge their position, prepare for hearings and assist with drafting — in one matter-centric workspace." />
+<link rel="canonical" href="https://nyaya.ai/" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="NYAYA.AI" />
+<meta property="og:title" content="NYAYA.AI — AI Case Intelligence for Indian Legal Practice" />
+<meta property="og:description" content="A matter-centric workspace for Indian legal practice — organise matters, research authorities, brainstorm and challenge your position, and assist with drafting, all in one place." />
+<meta property="og:image" content="/assets/screenshots/matter-overview-tab.png" />
+<meta property="og:url" content="https://nyaya.ai/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="NYAYA.AI — AI Case Intelligence for Indian Legal Practice" />
+<meta name="twitter:description" content="A matter-centric workspace for Indian legal practice — matters, legal search, brainstorming and drafting, connected." />
+<meta name="twitter:image" content="/assets/screenshots/matter-overview-tab.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,14 +32,13 @@
   <div class="nav-inner">
     <a href="#top" class="nav-logo">NYAYA.AI</a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#product">Product</a>
-      <a href="#how-it-works">How It Works</a>
+      <a href="#story">How It Works</a>
       <a href="#why">Why NYAYA.AI</a>
       <a href="#demo">Demo</a>
       <a href="#vision">About</a>
     </nav>
     <div class="nav-actions">
-      <a href="https://nyaya-in.vercel.app/" class="btn btn-brass nav-cta-desktop" target="_blank" rel="noopener">Try the Product</a>
+      <a href="https://nyaya-in.vercel.app/" class="btn btn-brass nav-cta-desktop" target="_blank" rel="noopener">Explore NYAYA</a>
       <a href="#contact" class="btn btn-primary nav-cta-desktop">Let's Connect</a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -36,240 +48,314 @@
 </header>
 
 <div class="mobile-menu">
-  <a href="#product">Product</a>
-  <a href="#how-it-works">How It Works</a>
+  <a href="#story">How It Works</a>
   <a href="#why">Why NYAYA.AI</a>
   <a href="#demo">Demo</a>
   <a href="#vision">About</a>
   <a href="#contact" class="btn btn-primary" style="align-self:flex-start;">Let's Connect</a>
-  <a href="https://nyaya-in.vercel.app/" class="btn btn-brass" style="align-self:flex-start;" target="_blank" rel="noopener">Try the Product</a>
+  <a href="https://nyaya-in.vercel.app/" class="btn btn-brass" style="align-self:flex-start;" target="_blank" rel="noopener">Explore NYAYA</a>
 </div>
 
 <main id="top">
 
-  <!-- ============================== HERO ============================== -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy reveal">
-        <span class="eyebrow">AI Case Intelligence<br />for Indian Legal Practice</span>
-        <h1>From case files<br />to case intelligence.</h1>
-        <p class="lede">NYAYA.AI helps legal professionals understand matters, research relevant Indian authorities, challenge their position, prepare for hearings and assist with drafting — in one matter-centric workspace.</p>
-        <div class="hero-actions">
-          <a href="https://nyaya-in.vercel.app/" class="btn btn-brass" target="_blank" rel="noopener">Try the Product</a>
-          <a href="#contact" class="btn btn-primary">Let's Connect</a>
-          <a href="#demo" class="btn btn-outline">Watch the Product</a>
-        </div>
-      </div>
-      <div class="hero-media reveal">
-        <div class="hero-photo">
-          <img src="/assets/images/hero-advocate.jpg" alt="Indian legal professional reviewing case documents in a chambers setting" />
-        </div>
-        <div class="hero-card">
-          <span class="card-label">Matter Intelligence</span>
-          <div class="card-title">Facts · Issues · Authorities</div>
-          <div class="card-meta">Understand → Research → Prepare</div>
-        </div>
+  <!-- ============================== SCROLL-DRIVEN PRODUCT STORY ============================== -->
+  <section class="story" id="story" aria-label="How a matter moves through NYAYA.AI">
+
+    <div class="story-progress" aria-hidden="true">
+      <div class="story-progress-track"><div class="story-progress-fill"></div></div>
+      <ol class="story-progress-labels">
+        <li data-plabel="0"><span class="n">01</span><span class="t">Understand</span></li>
+        <li data-plabel="1"><span class="n">02</span><span class="t">Research</span></li>
+        <li data-plabel="2"><span class="n">03</span><span class="t">Brainstorm</span></li>
+        <li data-plabel="3"><span class="n">04</span><span class="t">Challenge</span></li>
+        <li data-plabel="4"><span class="n">05</span><span class="t">Prepare</span></li>
+        <li data-plabel="5"><span class="n">06</span><span class="t">Draft</span></li>
+        <li data-plabel="6"><span class="n">07</span><span class="t">Return</span></li>
+      </ol>
+    </div>
+
+    <div class="story-mobile-bar" aria-hidden="true"><div class="story-mobile-fill"></div></div>
+
+    <div class="story-track">
+      <div class="story-viewport">
+
+        <!-- STAGE 0 — MATTER (HERO) -->
+        <article class="story-stage" data-stage="0" id="product" aria-label="Your matter">
+          <div class="stage-inner stage-hero">
+            <div class="stage-copy">
+              <span class="eyebrow" data-step="0">AI Case Intelligence<br />for Indian Legal Practice</span>
+              <h1 data-step="0">Understand the case.<br />Find the law.<br />Test your position.</h1>
+              <p class="lede" data-step="0">NYAYA.AI is a matter-centric workspace for Indian legal practice. Scroll to watch a matter move through it — from documents, to research, to a working draft.</p>
+              <div class="hero-actions" data-step="0">
+                <a href="https://nyaya-in.vercel.app/" class="btn btn-brass" target="_blank" rel="noopener">Explore NYAYA</a>
+                <a href="#demo" class="btn btn-outline-light">Watch the demo</a>
+              </div>
+              <span class="scroll-cue" data-step="1">Scroll to begin ↓</span>
+            </div>
+            <div class="stage-visual">
+              <div class="node node--matter node--hero">
+                <span class="node-pulse"></span>
+                <span class="node-label">Your<br />Matter</span>
+              </div>
+              <div class="hint-chip hint-chip--a" data-step="1">A document enters</div>
+              <div class="hint-chip hint-chip--b" data-step="2">Then another</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- STAGE 1 — DOCUMENTS ENTER THE MATTER -->
+        <article class="story-stage" data-stage="1" aria-label="Documents enter the matter">
+          <div class="stage-inner">
+            <span class="stage-caption" data-step="0">Bring the matter together.</span>
+            <div class="stage-diagram diagram-documents">
+              <svg class="connector-svg" viewBox="0 0 800 460" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <line class="connector-line" data-step="2" pathLength="100" x1="150" y1="90"  x2="392" y2="228"/>
+                <line class="connector-line" data-step="2" pathLength="100" x1="120" y1="230" x2="392" y2="230"/>
+                <line class="connector-line" data-step="2" pathLength="100" x1="150" y1="370" x2="392" y2="232"/>
+                <line class="connector-line" data-step="3" pathLength="100" x1="650" y1="120" x2="410" y2="228"/>
+                <line class="connector-line" data-step="3" pathLength="100" x1="650" y1="340" x2="410" y2="232"/>
+              </svg>
+              <div class="doc-chip doc-chip--1" data-step="0">Pleadings</div>
+              <div class="doc-chip doc-chip--2" data-step="0">Notice</div>
+              <div class="doc-chip doc-chip--3" data-step="1">Order</div>
+              <div class="doc-chip doc-chip--4" data-step="1">Agreement</div>
+              <div class="doc-chip doc-chip--5" data-step="1">Evidence</div>
+              <div class="node node--matter node--richer" data-step="4">
+                <span class="node-pulse"></span>
+                <span class="node-label">The<br />Matter</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- STAGE 2 — UNDERSTAND -->
+        <article class="story-stage" data-stage="2" aria-label="Understand the matter">
+          <div class="stage-inner">
+            <span class="stage-caption" data-step="0">Turn scattered information into matter context.</span>
+            <div class="stage-diagram diagram-understand">
+              <div class="understand-col" data-step="0">
+                <span class="understand-tag">Documents</span>
+              </div>
+              <div class="understand-arrow" data-step="1">↓</div>
+              <div class="understand-row" data-step="2">
+                <span class="chip">Facts</span>
+                <span class="chip">Issues</span>
+                <span class="chip">Parties</span>
+                <span class="chip">Dates</span>
+                <span class="chip">Key Events</span>
+              </div>
+              <div class="understand-arrow" data-step="3">↓</div>
+              <div class="node node--matter node--wide" data-step="4">
+                <span class="node-label">Matter<br />Context</span>
+              </div>
+            </div>
+            <p class="stage-footnote" data-step="4">A conceptual view of how the matter comes together — not a claim of fully automatic extraction.</p>
+          </div>
+        </article>
+
+        <!-- STAGE 3 — THE MATTER BECOMES THE CENTER -->
+        <article class="story-stage" data-stage="3" aria-label="Four ways to work with the matter">
+          <div class="stage-inner">
+            <span class="stage-caption" data-step="0">Not four products. One matter, four ways to work with it.</span>
+            <div class="stage-diagram diagram-capabilities">
+              <svg class="connector-svg" viewBox="0 0 800 480" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <line class="connector-line" data-step="1" pathLength="100" x1="400" y1="150" x2="205" y2="222"/>
+                <line class="connector-line" data-step="2" pathLength="100" x1="400" y1="150" x2="400" y2="208"/>
+                <line class="connector-line" data-step="3" pathLength="100" x1="400" y1="150" x2="595" y2="222"/>
+                <line class="connector-line" data-step="4" pathLength="100" x1="400" y1="312" x2="400" y2="332"/>
+                <circle class="connector-dot"  data-step="1" cx="205" cy="222" r="3.5"/>
+                <circle class="connector-ring" data-step="1" cx="205" cy="222" r="3.5"/>
+                <circle class="connector-dot"  data-step="2" cx="400" cy="208" r="3.5"/>
+                <circle class="connector-ring" data-step="2" cx="400" cy="208" r="3.5"/>
+                <circle class="connector-dot"  data-step="3" cx="595" cy="222" r="3.5"/>
+                <circle class="connector-ring" data-step="3" cx="595" cy="222" r="3.5"/>
+                <circle class="connector-dot"  data-step="4" cx="400" cy="332" r="3.5"/>
+                <circle class="connector-ring" data-step="4" cx="400" cy="332" r="3.5"/>
+              </svg>
+              <div class="node node--matter" style="grid-area:matter;">
+                <span class="node-label">This<br />Matter</span>
+              </div>
+              <div class="branch branch--matters" data-step="1">Matters<span class="branch-desc">Every case, organised in one place</span></div>
+              <div class="branch branch--search" data-step="2">Legal Search<span class="branch-desc">Search across the law that applies to your matter</span></div>
+              <div class="branch branch--brainstorm" data-step="3">Brainstorming<span class="branch-desc">Multiple AI agents debate a position, out loud</span></div>
+              <div class="branch branch--draft" data-step="4">Drafting<span class="branch-desc">Turn matter context into a first draft</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- STAGE 4 — LEGAL SEARCH -->
+        <article class="story-stage" data-stage="4" id="how-it-works" aria-label="Legal search">
+          <div class="stage-inner stage-split">
+            <div class="stage-split-label">
+              <span class="stage-kicker" data-step="0">Legal Search</span>
+              <h2 data-step="0">Find the law that matters to your case.</h2>
+              <p class="lede" data-step="1">Research relevant Indian authorities around the specific issues in your matter — connected back to the matter, not a disconnected search box.</p>
+            </div>
+            <div class="stage-split-visual">
+              <div class="search-mock" data-step="2">
+                <div class="search-mock-bar"><span data-step="3" class="search-mock-query">Limitation period — breach of contract</span></div>
+                <div class="search-mock-results" data-step="4">
+                  <div class="search-mock-card" data-step="5">Authority — Contract Act, relevant limitation provision</div>
+                  <div class="search-mock-card search-mock-card--expand" data-step="6">
+                    <span class="tag">Expanded</span>
+                    Source &amp; citation visible for review
+                  </div>
+                </div>
+              </div>
+              <img class="search-mock-shot" data-step="6" src="/assets/screenshots/legal-research-tab.png" alt="NYAYA.AI legal research screen with authorities connected to the matter" loading="lazy" />
+              <svg class="connector-svg connector-svg--tie-back" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true">
+                <line class="connector-line" data-step="7" pathLength="100" x1="380" y1="10" x2="20" y2="100"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <!-- STAGE 5 — AUTHORITIES FLOW BACK -->
+        <article class="story-stage" data-stage="5" aria-label="Authorities flow back into the matter">
+          <div class="stage-inner">
+            <span class="stage-caption" data-step="0">Research doesn't stay isolated. It becomes matter context.</span>
+            <div class="stage-diagram diagram-authorities">
+              <div class="authority-chip authority-chip--1" data-step="0">Authority</div>
+              <div class="authority-chip authority-chip--2" data-step="1">Authority</div>
+              <div class="authority-chip authority-chip--3" data-step="2">Authority</div>
+              <svg class="connector-svg" viewBox="0 0 800 420" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <line class="connector-line" data-step="1" pathLength="100" x1="180" y1="90"  x2="400" y2="240"/>
+                <line class="connector-line" data-step="2" pathLength="100" x1="400" y1="70"  x2="400" y2="240"/>
+                <line class="connector-line" data-step="3" pathLength="100" x1="620" y1="90" x2="400" y2="240"/>
+              </svg>
+              <div class="node node--matter node--richer" data-step="3">
+                <span class="node-pulse"></span>
+                <span class="node-label">The<br />Matter</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- STAGE 6 — BRAINSTORMING -->
+        <article class="story-stage" data-stage="6" aria-label="Brainstorming">
+          <div class="stage-inner">
+            <span class="stage-caption" data-step="0">Think through the matter before the matter tests you.</span>
+            <span class="stage-tag" data-step="0">In development</span>
+            <div class="stage-diagram diagram-brainstorm">
+              <div class="node node--question" data-step="1">How strong<br />is this position?</div>
+              <svg class="connector-svg" viewBox="0 0 800 420" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <line class="connector-line" data-step="2" pathLength="100" x1="400" y1="240" x2="160" y2="340"/>
+                <line class="connector-line" data-step="3" pathLength="100" x1="400" y1="240" x2="320" y2="360"/>
+                <line class="connector-line" data-step="4" pathLength="100" x1="400" y1="240" x2="480" y2="360"/>
+                <line class="connector-line" data-step="5" pathLength="100" x1="400" y1="240" x2="640" y2="340"/>
+              </svg>
+              <div class="branch branch--bstorm branch--b1" data-step="2">Argument</div>
+              <div class="branch branch--bstorm branch--b2" data-step="3">Counterargument</div>
+              <div class="branch branch--bstorm branch--b3" data-step="4">Alternative View</div>
+              <div class="branch branch--bstorm branch--b4" data-step="5">Open Question</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- STAGE 7 — CHALLENGE YOUR POSITION -->
+        <article class="story-stage" data-stage="7" aria-label="Challenge your position">
+          <div class="stage-inner">
+            <span class="stage-caption" data-step="0">Better preparation starts with knowing what could challenge you.</span>
+            <div class="stage-diagram diagram-challenge">
+              <div class="node node--position" data-step="0">Your Position</div>
+              <svg class="connector-svg" viewBox="0 0 800 460" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <line class="connector-line" data-step="1" pathLength="100" x1="400" y1="110" x2="220" y2="200"/>
+                <line class="connector-line connector-line--warn" data-step="2" pathLength="100" x1="400" y1="110" x2="580" y2="200"/>
+                <line class="connector-line connector-line--warn" data-step="3" pathLength="100" x1="580" y1="230" x2="450" y2="330"/>
+                <line class="connector-line connector-line--warn" data-step="4" pathLength="100" x1="580" y1="230" x2="580" y2="330"/>
+                <line class="connector-line connector-line--warn" data-step="5" pathLength="100" x1="580" y1="230" x2="710" y2="330"/>
+              </svg>
+              <div class="branch branch--support" data-step="1">Supporting<br />Authorities</div>
+              <div class="branch branch--warn branch--challenge" data-step="2">Challenging<br />Authorities</div>
+              <div class="branch branch--warn branch--sub branch--sub1" data-step="3">Exceptions</div>
+              <div class="branch branch--warn branch--sub branch--sub2" data-step="4">Limitations</div>
+              <div class="branch branch--warn branch--sub branch--sub3" data-step="5">Opposing<br />Arguments</div>
+            </div>
+            <span class="stage-caption stage-caption--after" data-step="6">Better preparation.</span>
+          </div>
+        </article>
+
+        <!-- STAGE 8 — PREPARE -->
+        <article class="story-stage" data-stage="8" aria-label="Prepare">
+          <div class="stage-inner stage-split">
+            <div class="stage-split-label">
+              <span class="stage-kicker" data-step="0">Prepare</span>
+              <h2 data-step="0">Turn everything you've learned into preparation.</h2>
+              <div class="converge-row" data-step="1">
+                <span class="chip chip--sm">Matter</span><span class="plus">+</span>
+                <span class="chip chip--sm">Documents</span><span class="plus">+</span>
+                <span class="chip chip--sm">Research</span><span class="plus">+</span>
+                <span class="chip chip--sm">Arguments</span><span class="plus">+</span>
+                <span class="chip chip--sm">Challenges</span>
+              </div>
+              <ul class="prep-list" data-step="3">
+                <li>Key Facts</li>
+                <li>Key Issues</li>
+                <li>Authorities</li>
+                <li>Arguments</li>
+                <li>Challenges</li>
+                <li>Questions To Prepare</li>
+              </ul>
+            </div>
+            <div class="stage-split-visual">
+              <img class="prep-shot" data-step="2" src="/assets/screenshots/hearing-prep-tab.png" alt="NYAYA.AI hearing preparation and Brief Me screen" loading="lazy" />
+            </div>
+          </div>
+        </article>
+
+        <!-- STAGE 9 — DRAFTING -->
+        <article class="story-stage" data-stage="9" aria-label="Drafting">
+          <div class="stage-inner stage-split">
+            <div class="stage-split-label">
+              <span class="stage-kicker" data-step="0">Draft</span>
+              <h2 data-step="0">Turn the work you've already done into a draft.</h2>
+              <div class="draft-build" data-step="1">
+                <span class="draft-line" data-step="1">Heading</span>
+                <span class="draft-line" data-step="2">Parties</span>
+                <span class="draft-line" data-step="3">Facts</span>
+                <span class="draft-line" data-step="4">Arguments</span>
+                <span class="draft-line" data-step="5">Clauses</span>
+              </div>
+            </div>
+            <div class="stage-split-visual">
+              <img class="draft-shot" data-step="6" src="/assets/screenshots/drafts-tab.png" alt="NYAYA.AI drafts screen generating a legal document from matter context" loading="lazy" />
+            </div>
+          </div>
+        </article>
+
+        <!-- STAGE 10 — RETURN TO THE MATTER -->
+        <article class="story-stage" data-stage="10" aria-label="Everything returns to the matter">
+          <div class="stage-inner">
+            <div class="stage-diagram diagram-return">
+              <div class="node node--matter" data-step="0" style="grid-area:matter;">
+                <span class="node-label">Matter</span>
+              </div>
+              <svg class="connector-svg" viewBox="0 0 800 420" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <line class="connector-line" data-step="1" pathLength="100" x1="400" y1="150" x2="209" y2="223"/>
+                <line class="connector-line" data-step="1" pathLength="100" x1="400" y1="150" x2="400" y2="208"/>
+                <line class="connector-line" data-step="1" pathLength="100" x1="400" y1="150" x2="591" y2="223"/>
+                <line class="connector-line" data-step="2" pathLength="100" x1="203" y1="264" x2="387" y2="326"/>
+                <line class="connector-line" data-step="2" pathLength="100" x1="400" y1="274" x2="400" y2="316"/>
+                <line class="connector-line" data-step="2" pathLength="100" x1="597" y1="264" x2="413" y2="326"/>
+              </svg>
+              <div class="branch branch--matters" data-step="1">Documents</div>
+              <div class="branch branch--search" data-step="1">Legal Search</div>
+              <div class="branch branch--brainstorm" data-step="1">Brainstorming</div>
+              <div class="branch branch--draft" data-step="2">Drafting</div>
+            </div>
+            <div class="return-flow" data-step="3">
+              <span>Understand</span><span>Research</span><span>Brainstorm</span><span>Challenge</span><span>Prepare</span><span>Draft</span><span>Return</span>
+            </div>
+            <h2 class="return-headline" data-step="4">Everything you need.<br />Around the matter.</h2>
+            <div class="hero-actions" data-step="4" style="justify-content:center;">
+              <a href="https://nyaya-in.vercel.app/" class="btn btn-brass" target="_blank" rel="noopener">Explore NYAYA</a>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
-
-  <!-- ============================== THE HUMAN SIDE ============================== -->
-  <section class="section" id="the-work">
-    <div class="container">
-      <div class="editorial">
-        <div class="editorial-photo reveal">
-          <img src="/assets/images/legal-documents.jpg" alt="Close-up of annotated legal documents and case files" />
-        </div>
-        <div class="reveal">
-          <span class="eyebrow">The Work Behind the Matter</span>
-          <h2>Behind every case is a matter that deserves attention.</h2>
-          <p class="lede" style="margin-top:22px;">Legal work is built on judgment, experience and careful preparation. But before that judgment can be applied, lawyers often have to work through large amounts of information.</p>
-          <ul class="friction-list">
-            <li>Understanding documents</li>
-            <li>Organising facts</li>
-            <li>Finding authorities</li>
-            <li>Revisiting research</li>
-            <li>Preparing for hearings</li>
-            <li>Turning research into drafts</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================== ONE MATTER, ONE WORKSPACE ============================== -->
-  <section class="section section--parchment">
-    <div class="container">
-      <div class="section-head section-head--center reveal">
-        <span class="eyebrow">A Connected Workspace</span>
-        <h2>One matter. Everything connected.</h2>
-        <p class="lede" style="margin:22px auto 0;">NYAYA.AI is built around the matter itself — keeping documents, facts, issues, research, authorities, briefs, hearing preparation and drafts connected.</p>
-      </div>
-
-      <div class="matter-hub reveal">
-        <div class="matter-hub-ring matter-hub-ring--outer" style="width:100%;height:100%;">
-          <div class="matter-hub-orbit"><span class="matter-hub-orbit-dot"></span></div>
-        </div>
-        <div class="matter-hub-ring matter-hub-ring--inner" style="width:64%;height:64%;"></div>
-        <svg class="matter-hub-lines" width="100%" height="100%"></svg>
-        <div class="matter-hub-center">
-          <span class="matter-hub-pulse"></span>
-          <span class="matter-hub-center-label">The<br />Matter</span>
-        </div>
-        <div class="matter-node"><span class="dot"></span><span class="label">Facts</span></div>
-        <div class="matter-node"><span class="dot"></span><span class="label">Documents</span></div>
-        <div class="matter-node"><span class="dot"></span><span class="label">Issues</span></div>
-        <div class="matter-node"><span class="dot"></span><span class="label">Research</span></div>
-        <div class="matter-node"><span class="dot"></span><span class="label">Authorities</span></div>
-        <div class="matter-node"><span class="dot"></span><span class="label">Brief</span></div>
-        <div class="matter-node"><span class="dot"></span><span class="label">Hearing Prep</span></div>
-        <div class="matter-node"><span class="dot"></span><span class="label">Drafts</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================== WORKFLOW ============================== -->
-  <section class="section" id="how-it-works">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">How It Works</span>
-        <h2>From understanding to preparation.</h2>
-        <p class="lede" style="margin-top:22px;max-width:64ch;">NYAYA.AI brings the work surrounding a legal matter into one connected workflow — helping you move from the initial case material to research, preparation and drafting, without repeatedly starting from scratch.</p>
-      </div>
-
-      <div class="journey">
-
-        <div class="journey-step reveal">
-          <div class="journey-copy">
-            <span class="journey-num">01</span>
-            <span class="journey-eyebrow">Understand</span>
-            <h3>Build a clear picture of the matter.</h3>
-            <p>Bring together the case documents, facts, parties, issues and other relevant information in one place. NYAYA.AI helps organize the matter into a structured understanding so you can quickly see what the case is about, what matters, and what requires attention.</p>
-          </div>
-          <div class="journey-media">
-            <img src="/assets/screenshots/matter-overview.png" alt="NYAYA.AI matter overview screen showing parties, matter type and case intelligence" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="journey-connector" aria-hidden="true"></div>
-
-        <div class="journey-step journey-step--reverse reveal">
-          <div class="journey-copy">
-            <span class="journey-num">02</span>
-            <span class="journey-eyebrow">Research</span>
-            <h3>Find the law that matters to your case.</h3>
-            <p>Research relevant Indian legal authorities around the specific issues in your matter. Instead of treating legal research as a disconnected search, NYAYA.AI keeps the research connected to the context of the case and provides access to the underlying authorities for your review.</p>
-          </div>
-          <div class="journey-media">
-            <img src="/assets/screenshots/research.png" alt="NYAYA.AI legal research screen with authorities connected to the matter" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="journey-connector" aria-hidden="true"></div>
-
-        <div class="journey-step reveal">
-          <div class="journey-copy">
-            <span class="journey-num">03</span>
-            <span class="journey-eyebrow">Challenge</span>
-            <h3>Don't only look for what supports you.</h3>
-            <p>Strong preparation means understanding the arguments that may work against you. NYAYA.AI can deliberately look for contrary authorities, exceptions, limitations and opposing positions that could affect your argument — helping you identify potential weaknesses before they become surprises.</p>
-          </div>
-          <div class="journey-media">
-            <img src="/assets/screenshots/research.png" alt="NYAYA.AI Find What Hurts My Case adversarial research view" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="journey-connector" aria-hidden="true"></div>
-
-        <div class="journey-step journey-step--reverse reveal">
-          <div class="journey-copy">
-            <span class="journey-num">04</span>
-            <span class="journey-eyebrow">Prepare</span>
-            <h3>Turn information into readiness.</h3>
-            <p>Once the matter and research come together, NYAYA.AI helps you quickly revisit the important facts, issues, authorities and arguments. Use Brief Me and hearing preparation to regain context and organize what deserves attention before stepping into the next stage of the matter.</p>
-          </div>
-          <div class="journey-media">
-            <img src="/assets/screenshots/hearing-prep.png" alt="NYAYA.AI Brief Me and hearing preparation screen" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="journey-connector" aria-hidden="true"></div>
-
-        <div class="journey-step reveal">
-          <div class="journey-copy">
-            <span class="journey-num">05</span>
-            <span class="journey-eyebrow">Draft</span>
-            <h3>Move from research to a working draft.</h3>
-            <p>Use the context already gathered around the matter to assist with creating first drafts. Instead of beginning with a blank page, NYAYA.AI can help turn your matter information and research into a starting point that you can review, refine and shape with your own legal judgment.</p>
-          </div>
-          <div class="journey-media">
-            <img src="/assets/screenshots/drafts.png" alt="NYAYA.AI drafts screen generating a legal document from matter context" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="journey-connector" aria-hidden="true"></div>
-
-        <div class="journey-step journey-step--reverse reveal">
-          <div class="journey-copy">
-            <span class="journey-num">06</span>
-            <span class="journey-eyebrow">Remember</span>
-            <h3>Come back to the matter without starting over.</h3>
-            <p>Legal matters rarely end in a single session. NYAYA.AI keeps the matter's context connected so that when you return — days, weeks or months later — you can pick up where you left off rather than reconstructing the case from the beginning.</p>
-          </div>
-          <div class="journey-media">
-            <img src="/assets/screenshots/matters-list.png" alt="NYAYA.AI matters list showing continuity across ongoing matters" loading="lazy" />
-          </div>
-        </div>
-
-      </div>
-
-      <p class="journey-close reveal">One matter. One connected workflow. From understanding the case to preparing for what comes next.</p>
-    </div>
-  </section>
-
-  <!-- ============================== FIND WHAT HURTS MY CASE ============================== -->
-  <section class="section section--dark hurts">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Find What Hurts My Case</span>
-        <h2>Good preparation means knowing what could go wrong.</h2>
-        <p class="lede" style="margin:22px auto 0;">NYAYA.AI does not only help surface authorities that support a position. It can also deliberately search for authorities, exceptions and limitations that may challenge it.</p>
-      </div>
-
-      <div class="hurts-flow reveal">
-        <div class="hurts-pill">Your Position</div>
-        <div class="hurts-arrow"></div>
-        <div class="hurts-branches">
-          <div class="hurts-branch">Supporting Authorities</div>
-          <div class="hurts-branch hurts-branch--warn">Contrary Authorities</div>
-          <div class="hurts-branch hurts-branch--warn">Exceptions</div>
-          <div class="hurts-branch hurts-branch--warn">Limitations</div>
-        </div>
-        <div class="hurts-arrow"></div>
-        <div class="hurts-final">Better Preparation</div>
-      </div>
-
-      <div class="hurts-photo reveal">
-        <img src="/assets/images/advocate-desk.jpg" alt="Lawyer reviewing marked legal research and documents" />
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================== SEE THE PRODUCT ============================== -->
-  <!-- <section class="section" id="product">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">See The Product</span>
-        <h2>See the matter come together.</h2>
-        <p class="lede" style="margin-top:22px;">Real screens from the NYAYA.AI workspace — from opening a matter to producing a first draft.</p>
-      </div>
-
-      <div class="reveal">
-        <div class="showcase-nav"></div>
-        <div class="showcase-panels"></div>
-      </div>
-    </div>
-  </section> -->
 
   <!-- ============================== DEMO VIDEO ============================== -->
   <section class="section section--parchment" id="demo">
@@ -281,8 +367,8 @@
       </div>
 
       <div class="video-wrap reveal">
-        <img src="/assets/screenshots/drafts.png" alt="NYAYA.AI product demonstration video poster" />
-        <video playsinline preload="none" poster="/assets/screenshots/drafts.png">
+        <img src="/assets/screenshots/drafts-tab.png" alt="NYAYA.AI product demonstration video poster" />
+        <video playsinline preload="none" poster="/assets/screenshots/drafts-tab.png">
           <source src="/assets/video/nyaya-demo.mp4" type="video/mp4" />
         </video>
         <div class="video-controls">
@@ -457,11 +543,11 @@
   <!-- ============================== FINAL CTA ============================== -->
   <section class="final-cta">
     <div class="container reveal">
-      <h2>Better preparation begins<br />with better intelligence.</h2>
+      <h2>Your next matter deserves more<br />than another blank search box.</h2>
       <p class="lede">See NYAYA.AI in action.</p>
       <div class="hero-actions" style="justify-content:center;">
-        <a href="https://nyaya-in.vercel.app/" class="btn btn-brass" target="_blank" rel="noopener">Try the Product</a>
-        <a href="#contact" class="btn btn-primary">Let's Connect</a>
+        <a href="https://nyaya-in.vercel.app/" class="btn btn-brass" target="_blank" rel="noopener">Explore NYAYA</a>
+        <a href="#contact" class="btn btn-primary">Talk to us</a>
       </div>
     </div>
   </section>

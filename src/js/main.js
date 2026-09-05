@@ -25,48 +25,39 @@ const IMAGES = {
 
 const DEMO_VIDEO = {
   src: "/assets/video/nyaya-demo.mp4",
-  poster: "/assets/screenshots/drafts.png",
+  poster: "/assets/screenshots/drafts-tab.png",
 };
 
 const SCREENSHOTS = [
   {
     num: "01",
-    label: "THE MATTER",
+    label: "MATTERS",
     title: "One matter, opened.",
-    caption: "Every matter starts with the essentials — parties, court, case number — and becomes the home for everything that follows.",
-    src: "/assets/screenshots/matter-overview.png",
-    alt: "NYAYA.AI matter overview screen showing client, opposing party, matter type and matter intelligence panel",
+    caption: "Every matter starts with the essentials — parties, court, case number — and becomes the home for the documents, research and drafts that follow.",
+    src: "/assets/screenshots/matter-overview-tab.png",
+    alt: "NYAYA.AI matter overview screen showing client, opposing party, matter type and the Matter Intelligence panel",
   },
   {
     num: "02",
-    label: "DOCUMENTS",
-    title: "Documents, organised.",
-    caption: "Case files are uploaded, reviewed and prepared for analysis inside the matter itself.",
-    src: "/assets/screenshots/documents.png",
-    alt: "NYAYA.AI documents tab showing an uploaded PDF pending scan",
-  },
-  {
-    num: "03",
-    label: "RESEARCH",
+    label: "LEGAL SEARCH",
     title: "Research, and its challenge.",
-    caption: "Generate research queries from the matter's legal issues, then deliberately search for what could work against the position.",
-    src: "/assets/screenshots/research.png",
+    caption: "Generate research queries from the matter's legal issues, then deliberately search for what could work against the position with Find What Hurts My Case.",
+    src: "/assets/screenshots/legal-research-tab.png",
     alt: "NYAYA.AI legal research screen with Find What Hurts My Case adversarial search",
   },
   {
-    num: "04",
-    label: "PREPARATION",
-    title: "Ready before the hearing.",
-    caption: "A fast refresher or structured hearing preparation, assembled from what is already known about the matter.",
-    src: "/assets/screenshots/hearing-prep.png",
-    alt: "NYAYA.AI Brief Me and Hearing Preparation screen",
+    num: "03",
+    label: "BRAINSTORMING",
+    title: "Think it through, in context.",
+    caption: "Work through arguments, counterarguments and open questions with the matter's own facts and issues as context. In development — not yet available in the live product.",
+    panel: true,
   },
   {
-    num: "05",
-    label: "DRAFTS",
+    num: "04",
+    label: "DRAFTING",
     title: "A first draft, in context.",
     caption: "First drafts generated from the matter's own facts and research — always intended for review by a qualified advocate.",
-    src: "/assets/screenshots/drafts.png",
+    src: "/assets/screenshots/drafts-tab.png",
     alt: "NYAYA.AI drafts screen generating a legal notice",
   },
 ];
@@ -118,6 +109,167 @@ if ("IntersectionObserver" in window) {
 } else {
   revealEls.forEach((el) => el.classList.add("is-visible"));
 }
+
+/* ==========================================================================
+   Scroll-driven product story
+   ========================================================================== */
+
+function initStory() {
+  const storyEl = document.querySelector(".story");
+  if (!storyEl) return;
+
+  const track = storyEl.querySelector(".story-track");
+  const stages = Array.from(storyEl.querySelectorAll(".story-stage"));
+  const progressFill = storyEl.querySelector(".story-progress-fill");
+  const mobileFill = storyEl.querySelector(".story-mobile-fill");
+  const STEPS_PER_STAGE = 8; // more than any stage actually uses — harmless
+  // maps each stage index to one of the 7 side-rail labels
+  const LABEL_FOR_STAGE = [0, 0, 0, 1, 1, 1, 2, 3, 4, 5, 6];
+
+  function applyStepState(stage, stepReached) {
+    stage.querySelectorAll("[data-step]").forEach((el) => {
+      const step = parseInt(el.getAttribute("data-step"), 10) || 0;
+      el.classList.toggle("is-in", step <= stepReached);
+    });
+  }
+
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isNarrow = window.matchMedia("(max-width: 880px)").matches;
+
+  if (reduced || isNarrow) {
+    // Unpinned mobile/reduced-motion mode: each stage reveals itself via
+    // IntersectionObserver, with a light stagger between its own elements.
+    stages.forEach((stage) => {
+      const items = stage.querySelectorAll("[data-step]");
+      items.forEach((el, i) => el.style.setProperty("--mi", i));
+    });
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              applyStepState(entry.target, STEPS_PER_STAGE);
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -40px 0px" }
+      );
+      stages.forEach((s) => io.observe(s));
+    } else {
+      stages.forEach((s) => applyStepState(s, STEPS_PER_STAGE));
+    }
+
+    // A simple top progress bar tracking overall scroll through the story,
+    // independent of the (disabled) pinning mechanics above.
+    let mTicking = false;
+    function updateMobileProgress() {
+      mTicking = false;
+      const rect = storyEl.getBoundingClientRect();
+      const total = storyEl.offsetHeight - window.innerHeight;
+      const scrolled = Math.min(Math.max(-rect.top, 0), Math.max(total, 1));
+      const pct = total > 0 ? (scrolled / total) * 100 : 0;
+      storyEl.classList.toggle("is-in-view", rect.top < window.innerHeight && rect.bottom > 0);
+      if (mobileFill) mobileFill.style.width = `${pct}%`;
+    }
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!mTicking) {
+          mTicking = true;
+          requestAnimationFrame(updateMobileProgress);
+        }
+      },
+      { passive: true }
+    );
+    updateMobileProgress();
+    return;
+  }
+
+  // Desktop pinned scroll-scrubbed mode.
+  let ticking = false;
+
+  function update() {
+    ticking = false;
+    const rect = track.getBoundingClientRect();
+    const total = track.offsetHeight - window.innerHeight;
+    const scrolled = Math.min(Math.max(-rect.top, 0), total);
+    const overallProgress = total > 0 ? scrolled / total : 0;
+
+    storyEl.classList.toggle("is-in-view", rect.top < window.innerHeight && rect.bottom > 0);
+
+    const raw = overallProgress * stages.length;
+    let stageIndex = Math.floor(raw);
+    if (stageIndex >= stages.length) stageIndex = stages.length - 1;
+    if (stageIndex < 0) stageIndex = 0;
+    const frac = Math.min(Math.max(raw - stageIndex, 0), 0.999);
+    const stepReached = Math.floor(frac * STEPS_PER_STAGE);
+
+    stages.forEach((stage, i) => {
+      const active = i === stageIndex;
+      stage.classList.toggle("is-active", active);
+      if (active) {
+        applyStepState(stage, stepReached);
+      } else if (i < stageIndex) {
+        applyStepState(stage, STEPS_PER_STAGE);
+      } else {
+        applyStepState(stage, -1);
+      }
+    });
+
+    if (progressFill) progressFill.style.height = `${overallProgress * 100}%`;
+    if (mobileFill) mobileFill.style.width = `${overallProgress * 100}%`;
+
+    const activeLabel = LABEL_FOR_STAGE[stageIndex] ?? 0;
+    storyEl.querySelectorAll(".story-progress-labels li").forEach((li) => {
+      li.classList.toggle("is-active", parseInt(li.dataset.plabel, 10) === activeLabel);
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    },
+    { passive: true }
+  );
+  window.addEventListener("resize", () => requestAnimationFrame(update));
+  update();
+}
+
+initStory();
+
+/* ==========================================================================
+   Four core products — tab list drives the connected diagram
+   ========================================================================== */
+
+function initCoreProducts() {
+  const buttons = document.querySelectorAll(".core-product");
+  const diagram = document.querySelector(".core-diagram");
+  if (!buttons.length || !diagram) return;
+
+  function activate(key) {
+    buttons.forEach((b) => {
+      const active = b.dataset.product === key;
+      b.classList.toggle("is-active", active);
+      b.setAttribute("aria-selected", active ? "true" : "false");
+    });
+    diagram.querySelectorAll("[data-node]").forEach((node) => {
+      node.classList.toggle("is-highlight", node.dataset.node === key);
+    });
+  }
+
+  buttons.forEach((b) => {
+    b.addEventListener("click", () => activate(b.dataset.product));
+  });
+
+  activate("matters");
+}
+
+initCoreProducts();
 
 /* ==========================================================================
    Matter hub — position nodes evenly around the circle
@@ -206,10 +358,20 @@ function buildShowcase() {
 
     const panel = document.createElement("div");
     panel.className = "showcase-panel" + (i === 0 ? " is-active" : "");
+    const frameContent = shot.panel
+      ? `<div class="showcase-frame showcase-frame--placeholder">
+          <span class="showcase-placeholder-tag">In development</span>
+          <ul>
+            <li>"What is the strongest argument here?"</li>
+            <li>"What could the other side argue?"</li>
+            <li>"What are the weaknesses in this position?"</li>
+          </ul>
+        </div>`
+      : `<div class="showcase-frame">
+          <img src="${shot.src}" alt="${shot.alt}" loading="lazy" />
+        </div>`;
     panel.innerHTML = `
-      <div class="showcase-frame">
-        <img src="${shot.src}" alt="${shot.alt}" loading="lazy" />
-      </div>
+      ${frameContent}
       <div class="showcase-caption">
         <div><span class="num">${shot.num}</span><h3>${shot.title}</h3></div>
         <p>${shot.caption}</p>
